@@ -6,13 +6,17 @@
 </head>
 <body>
     <div class="container">
-        Name : <input type="text" ng-model="name" /> {{ name }}
+        Name : <input id="name" type="text" ng-model="name" /> 
+       <br/> Display typed name here : {{ name }}
     </div>
     <div class="container" data-ng-init="developers=['sk', 'jw', 'gs']">
-        <h3>Looping through developer names</h3>
+        <h3>Looping through developer names</h3>        
+        <h4>Using ng-model, data-ng-init, ng-repeat.</h4>
+       
         <ul>
             <li data-ng-repeat="name in developers">{{ name }}</li>
         </ul>
     </div>
+    
 </body>
 </html>
