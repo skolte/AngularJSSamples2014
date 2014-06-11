@@ -2,23 +2,19 @@
 
 <html ng-app>
 <head>
-    <title>Using AngularJS Filters - By name, by city etc.</title>
+    <title>Rendering HTML inline with AngularJS</title>
     <script src="Javascript/angular.min.js"></script>
+    <script src="Javascript/Sample2Controller.js"></script>
 </head>
 
-<body data-ng-init="customers=[{name:'John', city:'Phoenix'},{name:'Sandeep', city:'Berkeley'},{name:'Misha', city:'San Diego'}]">
+<body data-ng-init="">
 
 <div class="container">
+     <h3>Rendering HTML inline with AngularJS</h3>
 
+    <div ng-controller="MyCtrl">
+        <div ng-bind-html="my_html | to_trusted"></div>
     </div>
-    <div class="container">
-        <h3>Looping through customers</h3>        
-        <h4>Using ng-repeat, and filters like name, ordered by city, uppercase / lowercase etc.</h4>
-        Name : <input type="text" ng-model="name" />
-        <ul>
-            <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">{{ cust.name | uppercase }} - {{ cust.city | lowercase}}</li>
-        </ul>
-    </div>
-
+</div>
 </body>
 </html>
